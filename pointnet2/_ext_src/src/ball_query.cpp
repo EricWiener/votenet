@@ -30,7 +30,7 @@ at::Tensor ball_query(at::Tensor new_xyz, at::Tensor xyz, const float radius,
                                     radius, nsample, new_xyz.data<float>(),
                                     xyz.data<float>(), idx.data<int>());
   } else {
-    AT_CHECK(false, "CPU not supported");
+    AT_ASSERT(false, "CPU not supported");
   }
 
   return idx;

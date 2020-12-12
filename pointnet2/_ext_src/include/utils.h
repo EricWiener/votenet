@@ -9,22 +9,22 @@
 
 #define CHECK_CUDA(x)                                          \
   do {                                                         \
-    AT_CHECK(x.type().is_cuda(), #x " must be a CUDA tensor"); \
+    AT_ASSERT(x.type().is_cuda(), #x " must be a CUDA tensor"); \
   } while (0)
 
 #define CHECK_CONTIGUOUS(x)                                         \
   do {                                                              \
-    AT_CHECK(x.is_contiguous(), #x " must be a contiguous tensor"); \
+    AT_ASSERT(x.is_contiguous(), #x " must be a contiguous tensor"); \
   } while (0)
 
 #define CHECK_IS_INT(x)                              \
   do {                                               \
-    AT_CHECK(x.scalar_type() == at::ScalarType::Int, \
+    AT_ASSERT(x.scalar_type() == at::ScalarType::Int, \
              #x " must be an int tensor");           \
   } while (0)
 
 #define CHECK_IS_FLOAT(x)                              \
   do {                                                 \
-    AT_CHECK(x.scalar_type() == at::ScalarType::Float, \
+    AT_ASSERT(x.scalar_type() == at::ScalarType::Float, \
              #x " must be a float tensor");            \
   } while (0)
